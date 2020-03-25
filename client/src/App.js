@@ -1,29 +1,31 @@
 import React from "react";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
-  return (
-    <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path={["/", "/books"]}>
-			<Books />
-          </Route>
-          <Route exact path={"/books/:id"}>
-			<Detail />
-          </Route>
-		  <Route>
-			  <NoMatch />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
+	return (
+		<Router>
+			<div className="container">
+				<Nav />
+				<Switch>
+					<Route exact path={["/", "/search"]}>
+						<Search />
+					</Route>
+					<Route exact path={"/saved"}>
+						<Saved />
+					</Route>
+					<Route>
+						<NoMatch />
+					</Route>
+				</Switch>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
