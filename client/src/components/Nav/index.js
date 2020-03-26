@@ -4,7 +4,8 @@ import "./style.css";
 
 function NavBar() {
 	return (
-		<div className="col-3 menu">
+		<div>
+			<span className="title">Google Books</span>
 			<ul>
 				<Link
 					to="/"

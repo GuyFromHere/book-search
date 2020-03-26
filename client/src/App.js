@@ -4,6 +4,7 @@ import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Jumbotron from "./components/Jumbotron";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -12,6 +13,7 @@ function App() {
 		<Router>
 			<div className="container">
 				<Nav />
+				<Jumbotron />
 				<Switch>
 					<Route exact path={["/", "/search"]}>
 						<Search />

@@ -1,13 +1,17 @@
 import React from "react";
 
-export function FormInput(props) {
-	return <input {...props}></input>;
+export function Input(props) {
+	return (
+		<div className="form-group">
+			<input className="form-control" {...props} />
+		</div>
+	);
 }
 
-export function FormButton(props) {
-	return <input type="submit"></input>;
-}
-
-export function Form(props) {
-	return <form {...props}>{children}</form>;
+export function FormBtn(props) {
+	return (
+		<button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+			{props.children}
+		</button>
+	);
 }
