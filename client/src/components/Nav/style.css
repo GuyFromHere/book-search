@@ -6,7 +6,8 @@ ul {
 	background-color: skyblue;
 }
 
-.nav-link {
+.nav-link,
+.nav {
 	float: left;
 	display: block;
 	color: white;
@@ -17,4 +18,9 @@ ul {
 
 .nav-link:hover {
 	color: rgb(13, 14, 14);
+}
+
+.title {
+	font-size: 16pt;
+	margin: 0 auto;
 }

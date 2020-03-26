@@ -13,7 +13,10 @@ function App() {
 		<Router>
 			<div className="container">
 				<Nav />
-				<Jumbotron />
+				<Jumbotron>
+					<h1>(React) Google Books Search</h1>
+					<h3>Search for and Save Books of Interest</h3>
+				</Jumbotron>
 				<Switch>
 					<Route exact path={["/", "/search"]}>
 						<Search />

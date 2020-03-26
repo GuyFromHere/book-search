@@ -1,5 +1,8 @@
 import axios from "axios";
 let queryStr = "https://www.googleapis.com/books/v1/volumes?q=";
+// Example search with author / title
+// https://www.googleapis.com/books/v1/volumes?q=inauthor:${author}+intitle:${title}
+let queryStrAuth = "inauthor:";
 
 export default {
 	// Gets all books
@@ -19,18 +22,19 @@ export default {
 		return axios.post("/api/books", bookData);
 	},
 	searchBooks: function(searchParams) {
+		console.log("searchbooks querystr = ");
 		return axios.get(queryStr + searchParams.title).then(result => {
-		  const newArr = result.data.items.map(item => {
-			return {
-			  id: item.id,
-			  title: item.volumeInfo.title,
-			  authors: item.volumeInfo.authors,
-			  description: item.volumeInfo.description,
-			  image: item.volumeInfo.imageLinks.thumbnail,
-			  link: item.volumeInfo.infoLink
-			}
-		  })
-		  return newArr;
+			const newArr = result.data.items.map(item => {
+				return {
+					id: item.id,
+					title: item.volumeInfo.title,
+					authors: item.volumeInfo.authors,
+					description: item.volumeInfo.description,
+					image: item.volumeInfo.imageLinks.thumbnail,
+					link: item.volumeInfo.infoLink
+				};
+			});
+			return newArr;
 		});
 	}
 };

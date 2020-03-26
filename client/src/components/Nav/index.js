@@ -5,8 +5,10 @@ import "./style.css";
 function NavBar() {
 	return (
 		<div>
-			<span className="title">Google Books</span>
 			<ul>
+				<li className="nav">
+					<span className="title">Google Books</span>
+				</li>
 				<Link
 					to="/"
 					className={
