@@ -1,4 +1,6 @@
 import axios from "axios";
+import NOIMAGE from "../NOIMAGE.png";
+
 export default {
 	// Gets all books
 	getBooks: function() {
@@ -18,17 +20,20 @@ export default {
 	},
 	searchBooks: function(searchParams) {
 		return axios.get("/api/books/search/" + searchParams.title).then(result => {
+			console.log(result.data.items);
 			const newArr = result.data.items.map(item => {
 				return {
 					id: item.id,
 					title: item.volumeInfo.title,
 					authors: item.volumeInfo.authors,
 					description: item.volumeInfo.description,
-					image: item.volumeInfo.imageLinks.thumbnail,
+					image: item.volumeInfo.imageLinks
+						? item.volumeInfo.imageLinks.thumbnail
+						: NOIMAGE,
 					link: item.volumeInfo.infoLink
 				};
 			});
 			return newArr;
-		})
+		});
 	}
 };

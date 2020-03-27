@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import DeleteBtn from '../../components/DeleteBtn';
+import DeleteBtn from "../../components/DeleteBtn";
+import { Col, Row, Container } from "../../components/Grid";
+import { Card } from "../../components/Card";
+
 import API from "../../utils/API";
 
 function Saved() {
@@ -20,31 +23,34 @@ function Saved() {
 			.catch(err => console.log(err));
 	};
 
-	const deleteBook = (id) => {
+	const deleteBook = id => {
 		API.deleteBook(id);
 		loadBooks();
-	  }
+	};
+
+	const renderBooks = () => {
+		if ({ books } === "undefined") {
+			return <h3>No Results to Display</h3>;
+		} else {
+			return (
+				<div className="results">
+					{books.map(book => {
+						return <Card book={book} />;
+					})}
+				</div>
+			);
+		}
+	};
 
 	return (
-		<div>
-			<h1>Saved Books:</h1>
-			<ul>
-				{books.map(book => {
-					return (
-						<li>
-							{book._id}
-							<a href={"/books/" + book._id}>
-								<strong>
-									{book.title} by {book.author}
-								</strong>
-								
-							</a>
-							<DeleteBtn onClick={() => deleteBook(book._id)} />
-						</li>
-					);
-				})}
-			</ul>
-		</div>
+		<Container>
+			<Row>
+				<div className="results">
+					<span id="resultsHeader">Saved Books</span>
+					<div className="resultsContainer">{renderBooks()}</div>
+				</div>
+			</Row>
+		</Container>
 	);
 }
 

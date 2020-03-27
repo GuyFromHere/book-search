@@ -5,21 +5,19 @@ import "./style.css";
 function handleSave(book) {
 	API.saveBook(book)
 		.then(res => {
-			//setBooks(res.data)
-			console.log("card saved book -> ");
-			console.log(res);
+			console.log("Book saved to DB.");
 		})
 		.catch(err => console.log(err));
 }
 
 export function CardHeader(props) {
 	return (
-			<div className="card-title">
-				<h2>{props.title}</h2>
-				<h3></h3>
-				<h3>{props.authors}</h3>
-			</div>
-		);
+		<div className="card-title">
+			<h2>{props.title}</h2>
+			<h3></h3>
+			<h3>{props.authors}</h3>
+		</div>
+	);
 }
 
 export function CardButton(props) {

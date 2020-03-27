@@ -36,11 +36,12 @@ class Search extends Component {
 		if (this.state.formObject.title) {
 			API.searchBooks({
 				title: this.state.formObject.title
-			}).then(res => {
-				this.setState({ books: res });
-				this.loadBooks(this.state.books);
 			})
-			.catch(err => console.log(err));
+				.then(res => {
+					this.setState({ books: res });
+					this.loadBooks(this.state.books);
+				})
+				.catch(err => console.log(err));
 		}
 	}
 
@@ -60,24 +61,17 @@ class Search extends Component {
 
 	render() {
 		return (
-			<Container fluid>
+			<Container>
 				<Row>
-					<Col size="md-12">
-						<form>
-							<Input
-								onChange={this.handleInputChange}
-								name="title"
-								placeholder="Title"
-							/>
-							<FormBtn
-								disabled={!this.state.formObject.title}
-								onClick={this.handleFormSubmit}
-							>
-								Search
-							</FormBtn>
-						</form>
-						
-					</Col>
+					<form>
+						<Input onChange={this.handleInputChange} name="title" placeholder="Title" />
+						<FormBtn
+							disabled={!this.state.formObject.title}
+							onClick={this.handleFormSubmit}
+						>
+							Search
+						</FormBtn>
+					</form>
 				</Row>
 				<Row>
 					<div className="results">
