@@ -11,6 +11,17 @@
 	border-bottom: none;
 }
 
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+/* .card-title {
+	display: flex;
+	flex-direction: column;
+} */
+
 .card a {
 	float: right;
 	padding: 7px;
@@ -26,3 +37,5 @@
 	float: left;
 	margin-right: 10px;
 }
+
+

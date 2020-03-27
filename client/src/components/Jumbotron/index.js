@@ -1,8 +1,9 @@
 import React from "react";
+import './style.css';
 
 function Jumbotron({ children }) {
 	return (
-		<div style={{ height: 100, padding: 50, textAlign: "center" }} className="jumbotron">
+		<div className="jumbotron">
 			{children}
 		</div>
 	);

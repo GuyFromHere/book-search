@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+	<title>React App</title>
+	<link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+		<div class="container">
+			<div>
+				<ul>
+					<li class="nav">
+						<span class="title">Google Books</span>
+					</li>
+					<a class="nav-link" href="/">
+						<li>Search</li>
+					</a>
+					<a class="nav-link" href="/saved">
+						<li>Saved</li>
+					</a></ul>
+				</div>
+				<div class="jumbotron" style="height: 100px; padding: 50px; text-align: center;">
+					<h1>(React) Google Books Search</h1>
+					<h3>Search for and Save Books of Interest</h3>
+				</div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<form _lpchecked="1">
+								<div class="form-group">
+									<input class="form-control" name="title" placeholder="Title">
+								</div>
+								<button class="btn btn-success" style="float: right; margin-bottom: 10px;">Search</button>
+							</form>
+						</div>
+					</div>
+					<div class="row">
+						<div class="results">
+							<span id="resultsHeader">Results</span>
+							<div class="resultsContainer">
+								<div class="results">
+									<div class="card">
+										<div class="card-header">
+											<div class="card-title">
+												<span class="book-title">A Spell for Chameleon (The Parallel Edition... Simplified)</span>
+												<span class="book-author">Piers Anthony</span>
+											</div>
+											<div class="card-buttons">
+												<a name="view" 
+													value="View" 
+													href="https://play.google.com/store/books/details?id=8sZ7aagsXZYC&amp;source=gbs_api" 
+													target="_blank" 
+													
+												>
+													View
+												</a>
+												<a name="save" 
+													value="Save" 
+													class="card-button"
+												>
+													Save
+												</a>
+											</div>
+										</div>
+										<div class="card-body">
+											<img src="http://books.google.com/books/content?id=8sZ7aagsXZYC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" alt="">
+											<p>
+												Piers Anthony’s bestselling Xanth series is one of the cornerstones of fantasy, a lively and 
+												whimsical interpretation of a genre often criticized for taking itself too seriously. Anthony’s 
+												first Xanth novel, A Spell for Chameleon, was initially edited to target a more traditional 
+												audience. Now, in an eBook exclusive, A Spell for Chameleon has been reworked line by line—its 
+												language matching the simpler, playful way with words that made Piers Anthony an enduring fan 
+												favorite. Xanth is an enchanted land where magic rules, a land of centaurs and dragons and basilisks 
+												where every citizen has a unique spell to call their own. For Bink of North Village, however, 
+												Xanth is no fairy tale. He alone has no magic. And unless he gets some—and fast!—he will be 
+												exiled. Forever. But the Good Magician Humfrey is convinced that Bink does indeed have magic. 
+												In fact, both Beauregard the genie and the magic wall chart insist that Bink has magic as powerful 
+												as any possessed by the King, the Good Magician Humfrey, or even the Evil Magician Trent. Be that 
+												as it may, no one can fathom the nature of Bink’s very special magic. This is even worse than having 
+												no magic at all . . . and he still faces exile!
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+  <script src="/static/js/bundle.js"></script><script src="/static/js/1.chunk.js"></script><script src="/static/js/main.chunk.js"></script><script src="/main.8c56e9370f19000a2944.hot-update.js"></script></body>
+</html>
