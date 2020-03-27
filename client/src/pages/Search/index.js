@@ -63,6 +63,8 @@ class Search extends Component {
 		return (
 			<Container>
 				<Row>
+					<h3>Book Search</h3>
+					<h4>Book</h4>
 					<form>
 						<Input onChange={this.handleInputChange} name="title" placeholder="Title" />
 						<FormBtn

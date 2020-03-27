@@ -1,6 +1,6 @@
 .card {
 	max-height: 545px;
-	border: 2px #dddddd solid;
+	border: 1px #333 solid;
 	border-radius: 4px;
 	overflow-x: hidden;
 	padding: 10px;
@@ -12,15 +12,16 @@
 }
 
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
 }
 
-/* .card-title {
-	display: flex;
-	flex-direction: column;
-} */
+.card-title h2,
+h3 {
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
 
 .card a {
 	float: right;
@@ -37,5 +38,3 @@
 	float: left;
 	margin-right: 10px;
 }
-
-

@@ -1,3 +1,24 @@
+.form-group {
+	text-align: center;
+}
+
 .form-control {
-	width: 80%;
+	width: 98%;
+	padding: 5px;
+	margin: 5px;
+}
+
+.btn {
+	float: right;
+	padding: 7px;
+	text-decoration: none;
+	color: #333;
+	cursor: pointer;
+	border: 1px solid black;
+	border-radius: 2px;
+	margin: 3px;
+}
+
+.btn:hover {
+	background-color: rgb(5, 167, 231);
 }
