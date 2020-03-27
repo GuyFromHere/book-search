@@ -1,9 +1,4 @@
 import axios from "axios";
-let queryStr = "https://www.googleapis.com/books/v1/volumes?q=";
-// Example search with author / title
-// https://www.googleapis.com/books/v1/volumes?q=inauthor:${author}+intitle:${title}
-let queryStrAuth = "inauthor:";
-
 export default {
 	// Gets all books
 	getBooks: function() {
@@ -22,8 +17,7 @@ export default {
 		return axios.post("/api/books", bookData);
 	},
 	searchBooks: function(searchParams) {
-		console.log("searchbooks querystr = ");
-		return axios.get(queryStr + searchParams.title).then(result => {
+		return axios.get("/api/books/search/" + searchParams.title).then(result => {
 			const newArr = result.data.items.map(item => {
 				return {
 					id: item.id,
@@ -35,6 +29,6 @@ export default {
 				};
 			});
 			return newArr;
-		});
+		})
 	}
 };

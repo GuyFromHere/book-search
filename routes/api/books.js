@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const booksController = require("../../controllers/booksController");
-const api = "AIzaSyBMwTE4OhmgvtizU7TDMEjcMVy2bRFjhaM";
 
 // Matches with "/api/books"
 router
@@ -14,5 +13,8 @@ router
 	.get(booksController.findById)
 	.put(booksController.update)
 	.delete(booksController.remove);
+
+// Matches with "/api/books/search/:title"
+router.route("/search/:title").get(booksController.search);
 
 module.exports = router;

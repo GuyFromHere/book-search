@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import DeleteBtn from '../../components/DeleteBtn';
 import API from "../../utils/API";
 
 function Saved() {
@@ -19,6 +20,11 @@ function Saved() {
 			.catch(err => console.log(err));
 	};
 
+	const deleteBook = (id) => {
+		API.deleteBook(id);
+		loadBooks();
+	  }
+
 	return (
 		<div>
 			<h1>Saved Books:</h1>
@@ -31,7 +37,9 @@ function Saved() {
 								<strong>
 									{book.title} by {book.author}
 								</strong>
+								
 							</a>
+							<DeleteBtn onClick={() => deleteBook(book._id)} />
 						</li>
 					);
 				})}
