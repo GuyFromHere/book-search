@@ -1,0 +1,28 @@
+.card {
+	max-height: 545px;
+	border: 2px #dddddd solid;
+	border-radius: 4px;
+	overflow-x: hidden;
+	padding: 10px;
+	margin: 0;
+}
+
+.card:last-child {
+	border-bottom: none;
+}
+
+.card a {
+	float: right;
+	padding: 7px;
+	text-decoration: none;
+	color: #333;
+	cursor: pointer;
+	border: 1px solid black;
+	border-radius: 2px;
+	margin: 3px;
+}
+
+.card-body img {
+	float: left;
+	margin-right: 10px;
+}

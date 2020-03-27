@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
+import { Card, CardButton, CardHeader } from "../../components/Card";
 import { Input, FormBtn } from "../../components/Form";
 import "./style.css";
 
@@ -56,17 +56,11 @@ class Search extends Component {
 			return <h3>No Results to Display</h3>;
 		} else {
 			return (
-				<List>
+				<div className="results">
 					{this.state.books.map(book => {
-						return (
-							<ListItem key={book.id}>
-								<strong>
-									{book.title} by {book.authors}
-								</strong>
-							</ListItem>
-						);
+						return <Card book={book} />;
 					})}
-				</List>
+				</div>
 			);
 		}
 	}
@@ -93,7 +87,12 @@ class Search extends Component {
 						</form>
 					</Col>
 				</Row>
-				<Row>{this.renderBooks()}</Row>
+				<Row>
+					<div className="results">
+						<span id="resultsHeader">Results</span>
+						<div className="resultsContainer">{this.renderBooks()}</div>
+					</div>
+				</Row>
 			</Container>
 		);
 	}
