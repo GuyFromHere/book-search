@@ -10,8 +10,9 @@ function handleSave(book) {
 		.catch(err => console.log(err));
 }
 
-function handleDelete(id) {
-	API.deleteBook(id);
+// called when delete button is clicked...this triggers the handleDelete function in Saved component
+function handleDeleteClick(id, handleDelete) {
+	handleDelete(id);
 }
 
 export function CardHeader(props) {
@@ -66,7 +67,8 @@ export function SavedCard(props) {
 					<CardButton
 						name="delete"
 						value="Delete"
-						onClick={() => handleDelete(props.book._id)}
+						onClick={() => 
+							handleDeleteClick(props.book._id, props.handleDelete)}
 					/>
 				</div>
 			</div>

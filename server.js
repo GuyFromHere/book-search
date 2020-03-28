@@ -18,8 +18,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-	process.env.MONGODB_URI ||
-	"mongodb://heroku_0jz4nl8w:svtngvls4e5ukppavh9j3q3cv9@ds255347.mlab.com:55347/heroku_0jz4nl8w",
+	process.env.MONGODB_URI,
 { useNewUrlParser: true, useUnifiedTopology: true }
 );
 

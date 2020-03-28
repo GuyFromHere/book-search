@@ -33,6 +33,7 @@ class Search extends Component {
 
 	handleFormSubmit(event) {
 		event.preventDefault();
+		
 		if (this.state.formObject.title) {
 			API.searchBooks({
 				title: this.state.formObject.title
