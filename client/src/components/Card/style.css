@@ -34,6 +34,11 @@ h3 {
 	margin: 3px;
 }
 
+.card a:hover {
+	background-color: skyblue;
+	color: white;
+}
+
 .card-body img {
 	float: left;
 	margin-right: 10px;

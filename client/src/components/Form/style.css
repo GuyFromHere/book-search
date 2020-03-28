@@ -17,8 +17,10 @@
 	border: 1px solid black;
 	border-radius: 2px;
 	margin: 3px;
+	background-color: white;
 }
 
 .btn:hover {
-	background-color: rgb(5, 167, 231);
+	background-color: skyblue;
+	color: white;
 }

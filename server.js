@@ -18,8 +18,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-	process.env.MONGODB_URI ||
-		"mongodb+srv://dbUser:Hamburger5@pubgithub-aqd38.mongodb.net/googlebooks?retryWrites=true&w=majority",
+	process.env.MONGODB_URI,
 	{ useNewUrlParser: true, useUnifiedTopology: true }
 );
 
