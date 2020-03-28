@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
 import { Row, Container } from "../../components/Grid";
 import { SavedCard } from "../../components/Card";
 
@@ -22,11 +21,10 @@ function Saved() {
 	};
 
 	const deleteBook = id => {
-		API.deleteBook(id);
-		//loadBooks();
-		API.getBooks()
-			.then(res => setBooks(res.data))
-			.catch(err => console.log(err));
+		API.deleteBook(id)
+		console.log('delete book ' + id)
+		loadBooks();
+		loadBooks();
 	};
 
 	const renderBooks = () => {
@@ -46,10 +44,13 @@ function Saved() {
 	return (
 		<Container>
 			<Row>
+				{books.length ? 
+				
 				<div className="results">
-					<span id="resultsHeader">Saved Books</span>
+					<h3>Saved Books</h3>
 					<div className="resultsContainer">{renderBooks()}</div>
 				</div>
+				: <h3>No saved books.</h3>}
 			</Row>
 		</Container>
 	);

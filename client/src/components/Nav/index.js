@@ -4,7 +4,7 @@ import "./style.css";
 
 function NavBar() {
 	return (
-		<div>
+		<div className="nav-bar">
 			<ul>
 				<li className="nav">
 					<span className="title">Google Books</span>

@@ -37,6 +37,13 @@ h3 {
 .card a:hover {
 	background-color: skyblue;
 	color: white;
+	border-color: white;
+}
+
+.card a:active {
+	background-color: white;
+	border-color: black;
+	color: black
 }
 
 .card-body img {

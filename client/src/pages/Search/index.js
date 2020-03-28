@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
+import { Row, Container } from "../../components/Grid";
 import { Card } from "../../components/Card";
 import { Input, FormBtn } from "../../components/Form";
 import "./style.css";
@@ -75,12 +75,14 @@ class Search extends Component {
 						</FormBtn>
 					</form>
 				</Row>
-				<Row>
+				{this.state.books.length ? 
 					<div className="results">
-						<span id="resultsHeader">Results</span>
-						<div className="resultsContainer">{this.renderBooks()}</div>
-					</div>
-				</Row>
+						<Row>
+							<h3>Results</h3>
+							<div className="resultsContainer">{this.renderBooks()}</div>
+						</Row>
+					</div> 
+				: null}
 			</Container>
 		);
 	}
